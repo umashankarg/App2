@@ -20,7 +20,8 @@ namespace App2
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            
+            MobileCenter.Start("a0896518-f63a-419d-83eb-78983518c82d",
+                   typeof(Analytics), typeof(Crashes));
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
@@ -29,8 +30,7 @@ namespace App2
             Button button = FindViewById<Button>(Resource.Id.MyButton);
 
             button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
-            MobileCenter.Start("a0896518-f63a-419d-83eb-78983518c82d",
-                   typeof(Analytics), typeof(Crashes));
+            
         }
     }
 }
